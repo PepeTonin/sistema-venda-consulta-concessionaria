@@ -59,13 +59,13 @@ vendas = {
 
 # transforma o dicionario em DataFrame depois o salva em arquivos excel
 clientes_df = pd.DataFrame([clientes])
-clientes_df.to_excel(r'banco/clientes.xlsx', index=False)
+clientes_df.to_excel('banco/clientes.xlsx', index=False)
 
 vendedores_df = pd.DataFrame([vendedores])
-vendedores_df.to_excel(r'banco/vendedores.xlsx', index=False)
+vendedores_df.to_excel('banco/vendedores.xlsx', index=False)
 
 carros_df = pd.DataFrame([carros])
-carros_df.to_excel(r'banco/carros.xlsx', index=False)
+carros_df.to_excel('banco/carros.xlsx', index=False)
 
 vendas_df = pd.DataFrame([vendas])
-vendas_df.to_excel(r'banco/vendas.xlsx', index=False)
+vendas_df.to_excel('banco/vendas.xlsx', index=False)

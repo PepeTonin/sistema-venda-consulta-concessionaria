@@ -37,7 +37,7 @@ def pesquisarVendas(i, base):
         id_buscado = 'id_cliente'
 
     # importa o banco de vendas
-    bancoVendas_df = pd.read_excel(r'banco/vendas.xlsx')
+    bancoVendas_df = pd.read_excel('banco/vendas.xlsx')
 
     # cria um outro DataFrame, filtrando a base de vendas e buscando apenas as vendas com base no id buscado
     # 'id_vendedor' para base de vendedores - 'id_cliente' para base de clientes
@@ -50,9 +50,9 @@ def pesquisarVendas(i, base):
     # caso não esteja vazio, realiza a listagem das vendas
     else:
         # importa os bancos que serão usados
-        bancoVendedores_df = pd.read_excel(r'banco/vendedores.xlsx')
-        bancoClientes_df = pd.read_excel(r'banco/clientes.xlsx')
-        bancoCarros_df = pd.read_excel(r'banco/carros.xlsx')
+        bancoVendedores_df = pd.read_excel('banco/vendedores.xlsx')
+        bancoClientes_df = pd.read_excel('banco/clientes.xlsx')
+        bancoCarros_df = pd.read_excel('banco/carros.xlsx')
 
         # cria listas, a partir do DF filtrado, contendo os valores:
         # ids dos clientes

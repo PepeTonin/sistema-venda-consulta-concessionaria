@@ -45,7 +45,7 @@ def menuPesquisar():
     # se for selecionado 'Pesquisar por vendedor'
     with tab1:
         # importa o banco que será a base das buscas
-        directory_path = r'banco/vendedores.xlsx'
+        directory_path = 'banco/vendedores.xlsx'
         bancoBase_df = pd.read_excel(directory_path)
 
         if bancoBase_df.empty:
@@ -64,7 +64,7 @@ def menuPesquisar():
     # se for selecionado 'Pesquisar por cliente'
     with tab2:
         # importa o banco que será a base das buscas
-        directory_path = r'banco/clientes.xlsx'
+        directory_path = 'banco/clientes.xlsx'
         bancoBase_df = pd.read_excel(directory_path)
 
         if bancoBase_df.empty:

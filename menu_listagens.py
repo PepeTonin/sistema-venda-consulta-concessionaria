@@ -5,7 +5,7 @@ import streamlit as st
 def listarCarrosAVenda():
     st.subheader('Carros a venda')
     # importa do banco a base de carros usando de index a coluna 'situacao'
-    baseCarros_df = pd.read_excel(r'banco/carros.xlsx', index_col='situacao')
+    baseCarros_df = pd.read_excel('banco/carros.xlsx', index_col='situacao')
     # verifica se algum erro acontece ao tentar buscar o banco, se ocorrer algum, significa que não há dados
     try:
         # gera um DF apenas com os carros com indexador 'disponível'
@@ -19,7 +19,7 @@ def listarCarrosAVenda():
 def listarCarrosVendidos():
     st.subheader('Carros vendidos')
     # importa do banco a base de carros usando de index a coluna 'situacao'
-    baseCarros_df = pd.read_excel(r'banco/carros.xlsx', index_col='situacao')
+    baseCarros_df = pd.read_excel('banco/carros.xlsx', index_col='situacao')
     # verifica se algum erro acontece ao tentar buscar o banco, se ocorrer algum, significa que não há dados
     try:
         # gera um DF apenas com os carros com indexador 'vendido'

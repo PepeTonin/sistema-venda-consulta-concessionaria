@@ -33,7 +33,7 @@ def realizarVenda():
                 try:
 
                     # importa o banco de carros
-                    carros_df = pd.read_excel(r'banco/carros.xlsx')
+                    carros_df = pd.read_excel('banco/carros.xlsx')
                     # busca a situação dele -> vendido ou disponivel
                     situacaoCarro = carros_df.iloc[int(carro)]['situacao']
 
@@ -48,7 +48,7 @@ def realizarVenda():
                         try:
 
                             # importa o banco de vendedores
-                            vendedores_df = pd.read_excel(r'banco/vendedores.xlsx')
+                            vendedores_df = pd.read_excel('banco/vendedores.xlsx')
                             # busca os dados do vendedor -> vendas realizadas e valor vendido
                             vendasRealizadas = int(vendedores_df.iloc[int(vendedor)]['vendas_realizadas'])
                             valorTotalVendido = float(vendedores_df.iloc[int(vendedor)]['valor_total_vendido'])
@@ -57,7 +57,7 @@ def realizarVenda():
                             try:
 
                                 # importa o banco de clientes
-                                clientes_df = pd.read_excel(r'banco/clientes.xlsx')
+                                clientes_df = pd.read_excel('banco/clientes.xlsx')
                                 # busca um dado --> finalidade apenas de verificar se o id é válido, dado não será usado
                                 clientes_df.iloc[int(cliente)]['CPF']
                                 
@@ -67,7 +67,7 @@ def realizarVenda():
                                 # atualiza a situação do carro no banco de carros, de disponivel para vendido
                                 atualizacaoSituacao = pd.DataFrame({'situacao': 'vendido'}, index=[int(carro)])
                                 carros_df.update(atualizacaoSituacao)
-                                carros_df.to_excel(r'banco/carros.xlsx', index=False)
+                                carros_df.to_excel('banco/carros.xlsx', index=False)
 
                                 # gatilho -> atualiza os dados de quantidade de vendas e valor total vendido, no banco dos vendedores
                                 # atualiza os dados do vendedor no banco de vendedores
@@ -75,12 +75,12 @@ def realizarVenda():
                                 vendasRealizadas += 1                           # soma 1 nas vendas realizadas
                                 atualizacaoVendedor = pd.DataFrame({'vendas_realizadas': vendasRealizadas, 'valor_total_vendido': valorTotalVendido}, index=[int(vendedor)])
                                 vendedores_df.update(atualizacaoVendedor)
-                                vendedores_df.to_excel(r'banco/vendedores.xlsx', index=False)
+                                vendedores_df.to_excel('banco/vendedores.xlsx', index=False)
 
                                 st.success('Venda realizada com sucesso')
 
                                 # função para inserir este novo dado no banco de vendas
-                                inserirDadoNoBanco(venda, r'banco/vendas.xlsx')
+                                inserirDadoNoBanco(venda, 'banco/vendas.xlsx')
                             
                             # mensagens de erro das validações
                             except:

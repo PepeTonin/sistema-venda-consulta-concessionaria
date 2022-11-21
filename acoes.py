@@ -45,13 +45,13 @@ def gerarResumoVendedor(bancoBase_df, i):
 def auxVenda_listarItens(base):
     # padrões para cada um dos parametros possíveis
     if base == 'vendedores':
-        directory_path = r'banco/vendedores.xlsx'
+        directory_path = 'banco/vendedores.xlsx'
         colunasMostradas = ['nome','CPF']
     if base == 'clientes':
-        directory_path = r'banco/clientes.xlsx'
+        directory_path = 'banco/clientes.xlsx'
         colunasMostradas = ['nome','CPF']
     if base == 'carros':
-        directory_path = r'banco/carros.xlsx'
+        directory_path = 'banco/carros.xlsx'
         colunasMostradas = ['modelo','placa','valor']
     # importa a base correta
     base_df = pd.read_excel(directory_path)

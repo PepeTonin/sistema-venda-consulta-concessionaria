@@ -43,7 +43,7 @@ def menuCadastrarCliente():
             else:
                 with st.spinner('Cadastrando...'):
                     sleep(delay_para_cadastro)
-                    inserirDadoNoBanco(novoCliente, r'banco/clientes.xlsx')
+                    inserirDadoNoBanco(novoCliente, 'banco/clientes.xlsx')
                     st.success('Cliente cadastrado')
                     
 
@@ -75,7 +75,7 @@ def menuCadastrarVendedor():
             else:
                 with st.spinner('Cadastrando...'):
                     sleep(delay_para_cadastro)
-                    inserirDadoNoBanco(novoVendedor, r'banco/vendedores.xlsx')
+                    inserirDadoNoBanco(novoVendedor, 'banco/vendedores.xlsx')
                     st.success('Vendedor cadastrado')
                     
 
@@ -108,5 +108,5 @@ def menuCadastrarCarro():
             else:
                 with st.spinner('Cadastrando...'):
                     sleep(delay_para_cadastro)
-                    inserirDadoNoBanco(novoCarro, r'banco/carros.xlsx')
+                    inserirDadoNoBanco(novoCarro, 'banco/carros.xlsx')
                     st.success('Carro cadastrado')
